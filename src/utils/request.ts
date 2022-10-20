@@ -45,6 +45,9 @@ const errorHandler = (error: any) => {
         message: '提示',
         description: customCodeMessage[code] || msg || "Error"
       })
+      if(code === 10002){
+        // router.replace('/user/login');
+      }
     }
   } else if (message === 'CancelToken') {
     // 取消请求

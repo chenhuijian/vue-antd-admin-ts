@@ -1,4 +1,4 @@
-// import { RoutesDataItem } from "@/utils/routes";
+import { RoutesDataItem } from "@/utils/routes";
 
 export type Theme = 'dark' | 'light';
 
@@ -17,7 +17,7 @@ export interface SettingsType {
   /**
    * 站点首页路由
    */
-  // homeRouteItem: RoutesDataItem;
+  homeRouteItem: RoutesDataItem;
 
   /**
    * 站点本地存储Token 的 Key值
@@ -72,12 +72,12 @@ export interface SettingsType {
 
 const settings: SettingsType = {
   siteTitle: 'ADMIN-ANTD-VUE',
-  // homeRouteItem: {
-  //   icon: 'control',
-  //   title: 'index-layout.menu.home.workplace',
-  //   path: '/home/workplace',
-  //   component: ()=> import('@/views/home/index.vue')
-  // },
+  homeRouteItem: {
+    icon: 'control',
+    title: 'index-layout.menu.home.workplace',
+    path: '/home/workplace',
+    component: ()=> import('@/views/home/index.vue')
+  },
   siteTokenKey: 'admin_antd_vue_token',
   ajaxHeadersTokenKey: 'x-token',
   ajaxResponseNoVerifyUrl: [

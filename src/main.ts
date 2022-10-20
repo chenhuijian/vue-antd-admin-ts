@@ -1,5 +1,15 @@
 import { createApp } from 'vue'
-import './style.css'
+// 引入 Antd
+import Antd from 'ant-design-vue';
+import router from '@/config/routes';
+
+// 全局样式
+import '@/assets/css/global.less';
+
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app
+  .use(Antd)
+  .use(router)
+  .mount('#app')

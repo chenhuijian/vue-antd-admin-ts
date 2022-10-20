@@ -10,4 +10,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // server: {
+  //   host: true,
+  //   port:9528,
+  // },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+        },
+        javascriptEnabled: true
+      }
+    }
+  }
 })
