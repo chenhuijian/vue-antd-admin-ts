@@ -1,7 +1,7 @@
 <template>
   <div class="user-layout">
     <div class="lang">
-      <!--      <SelectLang />-->
+      <select-lang/>
     </div>
     <router-view></router-view>
   </div>
@@ -12,13 +12,15 @@ import {ref, computed} from "vue";
 import {useRoute} from "vue-router";
 import {getRouteItem, RoutesDataItem, vueRoutes} from '@/utils/routes';
 import UserLayoutRoutes from './routes';
+import SelectLang from '@/components/SelectLang/index.vue';
+import useTitle from '@/composables/useTitle';
 
 const route = useRoute();
 // 所有菜单路由
 const menuData = ref<RoutesDataItem[]>(vueRoutes(UserLayoutRoutes, '/user'));
 // 当前路由 item
 const routeItem = computed<RoutesDataItem>(() => getRouteItem(route.path, menuData.value as RoutesDataItem[]));
-
+useTitle(routeItem)
 </script>
 
 <style lang="less" scoped>
